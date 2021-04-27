@@ -15,6 +15,25 @@ class EditorComponent extends React.Component {
             id: ''
         };
     }
+
+    componentDidMount = () => {
+        this.setState({
+            text: this.props.selectedNote.body,
+            title: this.props.selectedNote.title,
+            id: this.props.selectedNote.id
+        });
+    }
+
+    componentDidUpdate = () => {
+        if (this.props.selectedNote.id !== this.state.id) {
+            this.setState({
+                text: this.props.selectedNote.body,
+                title: this.props.selectedNote.title,
+                id: this.props.selectedNote.id
+            });
+        }
+    }
+
     render() {
         
         
@@ -23,7 +42,8 @@ class EditorComponent extends React.Component {
         return (
             <div className={classes.editorContainer}>
                 <ReactQuill
-                    value={this.state.text} onChange={this.updateBody}
+                    value={this.state.text}
+                    onChange={this.updateBody}
                 ></ReactQuill>
             </div>
         )
@@ -33,7 +53,10 @@ class EditorComponent extends React.Component {
         this.update();
     };
     update = debounce(() => {
-        console.log('updating database');
+        this.props.noteUpdate(this.state.id, {
+            title: this.state.title,
+            body: this.state.text
+        })
     }, 1500);
 }
 
