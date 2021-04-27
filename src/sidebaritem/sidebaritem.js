@@ -7,11 +7,28 @@ import DeleteIcon from '@material-ui/icons/Delete';
 import { removeHTMLTags } from '../helpers';
 
 class SidebarItemComponent extends React.Component{
-      constructor() {
-        super();
-    }
-       render() {
-        return(<div>hello sidebar item</div>)
+    
+    render() {
+           
+        const {_index,_note,classes,selectedNoteIndex } = this.props;
+           return (
+               <div key={_index}>
+                   <ListItem className={classes.listItem}
+                       selected={selectedNoteIndex === _index}
+                       alignItems='flex-start'
+                   >
+                       <div className={classes.textSection}
+                           onClick={() => this.selectNote(_note, _index)}>
+                           <ListItemText
+                               primary={_note.title}
+                               secondary={_note.body.substring(0,30) + '....'}
+                           ></ListItemText>
+                       </div>
+                       
+                   </ListItem>
+                   
+               </div>
+           );
     }
 }
 

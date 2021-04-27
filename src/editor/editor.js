@@ -34,7 +34,7 @@ class EditorComponent extends React.Component {
     };
     update = debounce(() => {
         console.log('updating database');
-    })
+    }, 1500);
 }
 
 export default withStyles(styles)(EditorComponent)
