@@ -45,7 +45,7 @@ class SidebarComponent extends React.Component{
                                         deleteNote={this.deleteNote}
                                     
                                     ></SidebarItemComponent>
-                                    <Divider></Divider>
+                                    
                                 </div>
                             )
                         })
