@@ -1,3 +1,4 @@
+
 const styles = theme => ({
   root: {
     backgroundColor: theme.palette.background.paper,
@@ -20,7 +21,7 @@ const styles = theme => ({
     width: '100%',
     height: '35px',
     borderBottom: '1px solid black',
-    borderRadius: '0px',
+    borderTopLeftRadius: '3rem',
     backgroundColor: '#29487d',
     color: 'white',
     '&:hover': {
@@ -34,7 +35,9 @@ const styles = theme => ({
     boxSizing: 'border-box',
     float: 'left',
     overflowY: 'scroll',
-    overflowX: 'hidden'
+    overflowX: 'hidden',
+    backgroundColor: "#EFF6FF",
+    borderTopLeftRadius:"2rem"
   },
   newNoteInput: {
     width: '100%',
