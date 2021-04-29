@@ -18,7 +18,8 @@ class App extends React.Component {
   }
   render() {
     return (
-      <div className="app-container">
+      
+      <div className="app-container ">
         <SidebarComponent
           selectedNoteIndex={this.state.selectedNoteIndex} notes={this.state.notes}
           deleteNote={this.deleteNote}
@@ -34,7 +35,8 @@ class App extends React.Component {
             ></EditorComponent> :
             null
         }
-      </div>
+        </div>
+        
     );
   }
   componentDidMount = () => {
